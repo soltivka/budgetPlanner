@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import s from './App.module.css';
+import {BrowserRouter, Route} from "react-router-dom";
+import MainMenu from "./Components/MainMenu/MainMenu";
+import Header from "./Components/Header/Header";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const renderMergedProps = (component, ...rest) => {           //вспомогательные функции для передачи пропс в компоненты
+    const finalProps = Object.assign({}, ...rest);
+    return (
+        React.createElement(component, finalProps)
+    );
+}
+const PropsRoute = ({component, ...rest}) => {               //вспомогательные функции для передачи пропс в компоненты
+    return (
+        <Route {...rest} render={routeProps => {
+            return renderMergedProps(component, routeProps, rest);
+        }}/>
+    );
+}
+
+const App = function (props) {
+
+    return (
+        <BrowserRouter>
+            <div className={s.app}
+                 style={{
+                     height: `${props.windowHeight}px`,
+                 }}>
+
+                <Header/>
+                <div>
+                    <PropsRoute path='/game'
+                    />
+                    <PropsRoute exact path='/'
+                                component={MainMenu}
+                    />
+                </div>
+            </div>
+        </BrowserRouter>
+    );
+
 }
 
 export default App;
