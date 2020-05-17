@@ -4,6 +4,7 @@ import s from './App.module.css';
 import {BrowserRouter, Route} from "react-router-dom";
 import MainMenu from "./Components/MainMenu/MainMenu";
 import Header from "./Components/Header/Header";
+import OptionsMenu from "./Components/OptionsMenu/OptionsMenu";
 
 
 const renderMergedProps = (component, ...rest) => {           //вспомогательные функции для передачи пропс в компоненты
@@ -29,9 +30,12 @@ const App = function (props) {
                      height: `${props.windowHeight}px`,
                  }}>
 
-                <Header/>
+                <Header setCurrentLocation={props.setCurrentLocation}
+                        state={props.state}/>
                 <div>
-                    <PropsRoute path='/game'
+                    <PropsRoute path='/options'
+                                component={OptionsMenu}
+
                     />
                     <PropsRoute exact path='/'
                                 component={MainMenu}

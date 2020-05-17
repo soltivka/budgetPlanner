@@ -10,7 +10,8 @@ const render = function (state) {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App state={state}/>
+                <App state={state}
+                setCurrentLocation={Store.setCurrentLocation.bind(Store)}/>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')

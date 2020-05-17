@@ -10,6 +10,13 @@
     width: 100%;
     background-color: black;
     align-items: center;
+    justify-content: space-between;
+}
+.header_leftSide{
+    max-width: 40%;
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
 
 .icon{
@@ -25,4 +32,11 @@
 .hoverElement:hover{
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.navbar{
+    display: flex;
+    height: 100%;
+    min-width: 50%;
+    flex-direction: row-reverse;
 }

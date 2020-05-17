@@ -1,0 +1,13 @@
+.transaction_container{
+    width: 98%;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    border:solid;
+    color: black;
+}
+.date{
+    display: flex;
+    justify-self: right;
+}
