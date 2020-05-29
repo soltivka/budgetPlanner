@@ -39,6 +39,8 @@ const App = function (props) {
                     />
                     <PropsRoute exact path='/'
                                 component={MainMenu}
+                                state={props.state}
+                                changeTransactionView={props.changeTransactionView}
                     />
                 </div>
             </div>

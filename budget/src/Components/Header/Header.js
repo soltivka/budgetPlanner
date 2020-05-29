@@ -13,7 +13,7 @@ const Header = function (props) {
                     <img className={`${s.icon} ${s.hoverElement}`}
                          src={budgetIcon}/>
                     <div>
-                        <h2 className={`${s.text}`}>Budget Planning</h2>
+                        <h4 className={`${s.text}`}>Coonjyt</h4>
                     </div>
                 </div>
                 <div className={s.navbar}>

@@ -8,7 +8,9 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-google-charts": "^3.0.15",
+    "react-scripts": "3.4.1",
+    "react-vis": "^1.11.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,6 +34,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "react-router-dom": "^5.2.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }

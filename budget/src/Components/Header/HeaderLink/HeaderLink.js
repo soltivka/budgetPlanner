@@ -6,7 +6,6 @@ import {NavLink} from "react-router-dom";
 
 const HeaderLink = function (props) {
     const currentClass = props.to===props.state.currentLocation?`${s.headerButtonActive}`:`${s.headerButton}`;
-    console.log(currentClass);
     const click = function () {
         props.setCurrentLocation(props.to);
     }

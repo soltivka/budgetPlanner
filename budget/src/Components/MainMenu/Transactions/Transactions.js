@@ -4,26 +4,37 @@ import {NavLink} from "react-router-dom";
 import Transaction from "./Tranaction/Transaction";
 
 const Transactions = function (props) {
+
+    const createTransactionList = function(transactions){
+        let transactionList =[];
+        transactions.map((el, i, arr) => {
+            let transaction = ()=>{
+                return (
+                        <Transaction
+                            id={el.id}
+                            key={el.id}
+                            size={el.size}
+                            date={el.date}
+                            name={el.name}
+                            text={el.text}
+                            minimized={el.minimized}
+                            changeTransactionView={props.changeTransactionView}/>
+                )
+            };
+            transactionList.push(transaction());
+        })
+        console.log(transactionList);
+        return transactionList;
+    };
+    console.log(props);
+
     return (
         <div className={s.transactions_container}>
             Transactions
             <div className={s.transactions_content}>
-                <Transaction incomeSize={900} transactionDate={'25.03.15'}/>
-                <Transaction incomeSize={-300} transactionDate={'25.03.15'}/>
-                <Transaction incomeSize={0} transactionDate={'25.03.15'}/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-                <Transaction/>
-
+                {createTransactionList(props.transactionList)}
             </div>
-
         </div>
     );
 }
-export default Transactions
+export default Transactions;
