@@ -3,15 +3,14 @@ import s from './Transaction.module.css';
 
 
 const Transaction = function (props) {
-    const color = props.size > 0 ? '209, 255, 209' : '255, 209, 209';
+    const color = props.size > 0 ? props.colors.green : props.colors.red;
     const click=()=>{
         props.changeTransactionView(props.id);
     }
-    console.log(props);
     return (
         <div className={s.transaction_container}
              style={{
-                 borderColor: `rgb(${color})`,
+                 borderColor: color,
                  minHeight: props.minimized ? '50px' : '115px',
              }}>
             <div className={s.mainArea}>
@@ -22,7 +21,7 @@ const Transaction = function (props) {
                 <div  className={s.wrapButton}
                       style={{
                     transform: props.minimized ? 'rotate(90deg)' : 'rotate(270deg)',
-                          borderBottom: `solid 2px rgb(${color})`
+                          borderBottom: `solid 2px ${color}`
                 }} onClick={click}>{'>'}</div>
             </div>
             <div style={{

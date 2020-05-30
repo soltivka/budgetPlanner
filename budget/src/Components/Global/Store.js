@@ -9,6 +9,11 @@ const Store = {
 
         transactionList: [],
 
+        colors:{
+            red: "rgba(255, 209, 209,1)",
+            green: "rgba(209, 255, 209,1)",
+        }
+
     },
     setStartState(data) {
         this._state.transactionList = parseData_transactionList(data);

@@ -20,7 +20,6 @@ const render = function (state) {
     );
 }
 Store.setStartState(data);
-console.log(Store._state)
 Store.subscribe(render);
 
 

@@ -18,15 +18,14 @@ const Transactions = function (props) {
                             name={el.name}
                             text={el.text}
                             minimized={el.minimized}
+                            colors={props.colors}
                             changeTransactionView={props.changeTransactionView}/>
                 )
             };
             transactionList.push(transaction());
         })
-        console.log(transactionList);
         return transactionList;
     };
-    console.log(props);
 
     return (
         <div className={s.transactions_container}>

@@ -1,0 +1,14 @@
+.InfoBoard_container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: black;
+    border: solid 1px black;
+}
+.InfoBoard_header{
+    background-color: black;
+    color: white;
+}
+.InfoBoard_header>h3{
+    margin: 0;
+}

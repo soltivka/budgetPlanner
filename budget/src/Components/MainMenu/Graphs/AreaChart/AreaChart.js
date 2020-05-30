@@ -18,18 +18,14 @@ const AreaChart = function (props) {
     ];
     return (
         <div className={s.areaChartContainer}>
-            <XYPlot height={200} width={200}
-                    onClick={click}
-                    animation={duration:5}>
+            <XYPlot height={200} width={200}>
+                <HorizontalGridLines />
                 <VerticalBarSeries
                     data={data}
-                    color={"red"}/>
-            </XYPlot>
-            <XYPlot height={200} width={200}>
-                <LineSeries data={data}/>
-            </XYPlot>
-            <XYPlot height={200} width={200}>
-                <MarkSeries data={data}/>
+                    onClick={click}
+                    color={"blue"}/>
+                <XAxis />
+                <YAxis />
             </XYPlot>
 
         </div>

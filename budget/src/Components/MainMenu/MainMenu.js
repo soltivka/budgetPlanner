@@ -7,10 +7,12 @@ import Transactions from "./Transactions/Transactions";
 const MainMenu = function (props) {
     return (
         <div className={s.screen}>
-            <Graphs/>
+            <Graphs
+            state={props.state}/>
             <Transactions
                 changeTransactionView={props.changeTransactionView}
-                transactionList={props.state.transactionList}/>
+                transactionList={props.state.transactionList}
+                colors={props.state.colors}/>
         </div>
     );
 }
