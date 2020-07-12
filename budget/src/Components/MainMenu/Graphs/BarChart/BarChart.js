@@ -10,11 +10,12 @@ const BarChart = function (props) {
     console.log(props);
 
     let barCollection = percentHeight.map((el, i, arr) => {
-
         return (
+
             <Bar
                 key={i}
                 height={el}
+                width={100/arr.length}
                 color={color}
                 dispatch={props.dispatch}/>
         )

@@ -7,6 +7,7 @@ const Bar = function (props) {
              style={{
                  backgroundColor: props.color,
                  height: props.height,
+                 width: props.width+"%",
              }}>
 
         </div>
