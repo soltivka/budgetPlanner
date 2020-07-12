@@ -9,9 +9,10 @@ const MainMenu = function (props) {
         <div className={s.screen}>
             <Graphs
             state={props.state}/>
+
             <Transactions
-                changeTransactionView={props.changeTransactionView}
-                transactionList={props.state.transactionList}
+                dispatch={props.dispatch}
+                state={props.state.transactionList}
                 colors={props.state.colors}/>
         </div>
     );

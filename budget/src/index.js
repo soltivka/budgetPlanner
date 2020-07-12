@@ -1,26 +1,26 @@
 import React from 'react';
 import './index.css';
-import Store from "./Components/Global/Store";
+import store from "./Components/Global/redux-store.js";
 import ReactDOM from "react-dom";
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
-import data from "./Components/Global/data";
 
-const render = function (state) {
+const render = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
                 <App state={state}
-                setCurrentLocation={Store.setCurrentLocation.bind(Store)}
-                     changeTransactionView={Store.changeTransactionView.bind(Store)}/>
+                     dispatch={store.dispatch.bind(store)}
+                />
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
-Store.setStartState(data);
-Store.subscribe(render);
+let state=store.getState();
+render(state);
+store.subscribe(()=>{render(store.getState())});
 
 
 serviceWorker.unregister();

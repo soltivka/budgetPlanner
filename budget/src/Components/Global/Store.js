@@ -9,6 +9,8 @@ const Store = {
 
         transactionList: [],
 
+
+
         colors:{
             red: "rgba(255, 209, 209,1)",
             green: "rgba(209, 255, 209,1)",
@@ -24,10 +26,6 @@ const Store = {
         this._state.transactionList[id].minimized = !this._state.transactionList[id].minimized;
         this._callSubscriber(this._state);
     },
-    setCurrentLocation(location) {
-        this._state.currentLocation = location;
-        this._callSubscriber(this._state);
-    },
 
     _callSubscriber() {
     },
@@ -38,19 +36,6 @@ const Store = {
         this._callSubscriber(this._state);
     }
 }
-const parseData_transactionList = function (data) {
-    let transactionList = [];
-    data.map((el, i, arr) => {
-        let newListElem = {};
-        newListElem.id = i;
-        newListElem.size = Math.round(findSize(el));
-        newListElem.date = findDate(el);
-        newListElem.name = el.t_purpose;
-        newListElem.text = JSON.stringify(el);
-        newListElem.type = el.t_cash_type;
-        newListElem.minimized = true;
-        transactionList.push(newListElem);
-    })
-    return transactionList
-}
+
+
 export default Store

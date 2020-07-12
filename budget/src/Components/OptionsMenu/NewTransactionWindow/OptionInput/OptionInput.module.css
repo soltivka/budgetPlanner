@@ -1,0 +1,30 @@
+.container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+
+    background-color: white;
+    box-shadow: inset 1px 1px 20px 7px rgba(0,0,0,0.5);
+}
+.body{
+    width: 75%;
+    margin-left: 10px;
+    display: flex;
+    align-content: center;
+}
+.selectArea{
+    display: flex;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+
+    outline: none;
+    box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.5);
+    border: none
+}
+.optionArea{
+    text-align: center;
+    outline: none;
+}

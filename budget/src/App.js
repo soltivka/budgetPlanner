@@ -21,17 +21,19 @@ const PropsRoute = ({component, ...rest}) => {               //вспомога�
     );
 }
 
-const App = function (props) {
 
+
+
+const App = function (props) {
     return (
         <BrowserRouter>
             <div className={s.app}
                  style={{
-                     height: `${props.windowHeight}px`,
+                     height: `${props.state.header.windowHeight}px`,
                  }}>
 
-                <Header setCurrentLocation={props.setCurrentLocation}
-                        state={props.state}/>
+                <Header dispatch={props.dispatch}
+                        state={props.state.header}/>
                 <div>
                     <PropsRoute path='/options'
                                 component={OptionsMenu}
@@ -39,8 +41,8 @@ const App = function (props) {
                     />
                     <PropsRoute exact path='/'
                                 component={MainMenu}
-                                state={props.state}
-                                changeTransactionView={props.changeTransactionView}
+                                state={props.state.mainMenu}
+                                dispatch={props.dispatch}
                     />
                 </div>
             </div>

@@ -5,7 +5,6 @@ import {NavLink} from "react-router-dom";
 import HeaderLink from "./HeaderLink/HeaderLink";
 
 const Header = function (props) {
-    console.log(window.innerHeight);
     return (
         <div className={s.header_wrapper}>
             <header className={s.header_container}>
@@ -19,11 +18,11 @@ const Header = function (props) {
                 <div className={s.navbar}>
                     <HeaderLink to={'/options'}
                                 text={'Options'}
-                                setCurrentLocation={props.setCurrentLocation}
+                                dispatch={props.dispatch}
                                 state={props.state}/>
                     <HeaderLink to={'/'}
                                 text={'Main'}
-                                setCurrentLocation={props.setCurrentLocation}
+                                dispatch={props.dispatch}
                                 state={props.state}/>
                 </div>
             </header>
