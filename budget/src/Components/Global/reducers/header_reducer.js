@@ -9,7 +9,6 @@ const header_reducer = function (state, action) {
         switch (action.type) {
             case SET_CURRENT_URL_LOCATION:
                 state.currentLocation = action.location;
-                console.log(window.location.toString().split('/'))
         }
 
         return state

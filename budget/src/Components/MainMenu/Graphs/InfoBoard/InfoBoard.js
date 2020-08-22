@@ -16,10 +16,12 @@ const InfoBoard = function (props) {
                     }}>
                         {props.income}
                     </h1>
-                    <p>last 30 days</p>
 
+                    <img  className={s.icon} src={someicon}/>
                 </div>
-                <img  className={s.icon} src={someicon}/>
+                <div>
+                    <p className={s.smallText}>last 30 days</p>
+                </div>
 
 
 
